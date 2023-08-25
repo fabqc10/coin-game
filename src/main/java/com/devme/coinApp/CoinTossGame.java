@@ -6,6 +6,7 @@ public class CoinTossGame {
     private Scanner scanner;
     public static void main (String[] args){
         CoinTossGame game = new CoinTossGame();
+        game.scanner = new Scanner(System.in);
         Player p1 = new Player(game.askName());
         p1.setGuess(game.askGuess());
 
@@ -15,6 +16,13 @@ public class CoinTossGame {
         } else {
             p2.setGuess(Coin.HEADS);
         }
+
+        System.out.println("Flipping Coin");
+        Coin coin = new Coin();
+        coin.flip();
+        System.out.println("Coin landed on side...");
+        System.out.println(coin.getSide());
+        game.startGame(p1,p2,coin);
 
     }
     public String askName(){
