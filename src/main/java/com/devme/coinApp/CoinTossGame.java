@@ -24,6 +24,8 @@ public class CoinTossGame {
         System.out.println(coin.getSide());
         game.startGame(p1,p2,coin);
 
+        game.scanner.close();
+
     }
     public String askName(){
         System.out.println("Enter your name: ");
